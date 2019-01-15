@@ -3,7 +3,6 @@
 
 // init project
 var express = require('express');
-var headers = require('request');
 
 var app = express();
 
@@ -26,12 +25,11 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get('api/whoami', (res, req, next) => {
+app.get('/api/whoami', (res, req, next) => {
 
-
+console.log(req.header('User-Agent'));
 
 });
-const language = req.get('language');
 
 
 
