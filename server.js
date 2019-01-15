@@ -3,6 +3,8 @@
 
 // init project
 var express = require('express');
+var headers = require('request');
+
 var app = express();
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
@@ -24,7 +26,12 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
+app.get('api/whoami', (res, req, next) => {
 
+
+
+});
+const language = req.get('language');
 
 
 
