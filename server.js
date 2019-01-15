@@ -25,10 +25,14 @@ app.get("/api/hello", function (req, res) {
   res.json({greeting: 'hello API'});
 });
 
-app.get('/api/whoami', (res, req, next) => {
+app.get('/api/whoami', function(req, res, next){
 
-console.log(req.header('User-Agent'));
-
+res.json({
+  ipadress: '',
+  language: '',
+  software: req.get('user-Agent')
+});
+  
 });
 
 
