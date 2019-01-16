@@ -28,13 +28,12 @@ app.get("/api/hello", function (req, res) {
 app.get('/api/whoami', function(req, res, next){
 
 res.json({
-  ipadress: '',
-  language: '',
+  ipadress: req.ip,
+  language: req.get('accept-language'),
   software: req.get('user-Agent')
 });
   
 });
-
 
 
 // listen for requests :)
